@@ -1,0 +1,21 @@
+version: 2.1
+
+workflows:
+  main:
+    jobs:
+      - build
+jobs:
+  build:
+    parallelism: 5 
+    machine:
+      image: ubuntu-2004:202107-02
+    steps:
+      - checkout
+      - run: 
+         name: "Testing"  
+         command: sleep 30m
+         no_output_timeout: 40m
+      - run: git submodule sync
+      - run: git submodule update --init
+      - run: |
+              docker run -d -p 3000:80 nginx && sleep 3 && curl localhost:3000
