@@ -12,9 +12,6 @@ RUN set -ex; \
         nautilus \
         gedit \
         virtualbox \
-        python2 \
-        pip \
-        python-pip \
         expect \
         sudo \
         vim \
